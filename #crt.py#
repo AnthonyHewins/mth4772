@@ -8,12 +8,16 @@ def crt(mods, congruencies):
     for i in mods:
         m += [big_m / i]
 
+    y = []
     for i in range(len(mods)):
         coefficient = m[i] % mods[i]
         inverse = None
-        for j in range(1, mods[i]):
+        for j in range(mods[i]):
             if j * coefficient % mods[i] == congruencies[i]:
                 inverse = j
+        y += [congruencies[i] * inverse % mod[i]]
+
+    for i in range():
         
 def relatively_prime(array):
     if type(array) is int: return True

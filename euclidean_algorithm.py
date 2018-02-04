@@ -4,6 +4,7 @@ class Iteration():
         divisor = divisor
         multiples = multiples
         remainder = remainder
+
 """
 def linear_combination(gcd, stack):
     previous_dividend, previous_divisor = None, None
@@ -19,9 +20,8 @@ def linear_combination(gcd, stack):
         remainder = iteration.remainder
 """     
         
-def euclidean_algorithm(int1, int2):
+def euclidean_algorithm(int1, int2, suppress_prints=False):
     if int1 == int2:
-        print("They're equal, the answers obvious!")
         return int1
     if int1 < int2:
         int1, int2 = int2, int1
@@ -33,7 +33,7 @@ def euclidean_algorithm(int1, int2):
     remainder = int1 % int2
    
     while remainder != 0:
-        print("%d = %d(%d) + %d" % (dividend, divisor, multiples, remainder))
+        if not suppress_prints: print("%d = %d(%d) + %d" % (dividend, divisor, multiples, remainder))
 
         stack += [Iteration(dividend=dividend, divisor=divisor, multiples=multiples, remainder=remainder)]
         dividend = divisor
@@ -41,10 +41,7 @@ def euclidean_algorithm(int1, int2):
         multiples = dividend // divisor
         remainder = dividend % divisor
 
-    print("%d = %d(%d) + %d" % (dividend, divisor, multiples, remainder))
-    print("GCD = %d" % divisor)
-    
-    return divisor, stack
+    return divisor
     
 if __name__ =="__main__":
     from argparse import ArgumentParser
