@@ -62,7 +62,8 @@ if __name__ =="__main__":
     parser.add_argument("--no-lin-combination", action='store_true', help="Don't find a linear combination")
     args = parser.parse_args()
 
-    gcd, stack = euclidean_algorithm(args.int1, args.int2)
+    gcd = euclidean_algorithm(args.int1, args.int2)
+    print("GCD:",gcd)
 
 #    if not args.no_lin_combination:
 #       linear_combination(gcd, stack)
