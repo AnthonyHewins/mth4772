@@ -1,5 +1,25 @@
 from euclidean_algorithm import euclidean_algorithm as gcd
 
+"""
+Given a set of congruencies where m_i are relatively prime:
+
+x === a1 (mod m1)
+x === a2 (mod m2)
+x === a3 (mod m3)
+x === a4 (mod m4)
+
+construct a solution such that:
+
+     (x m1 m2 ...)
+M1 = ------------- for all n;
+         m1
+
+x = (a1)(M1) + (a2)(M2) + ...
+
+Notice x % (anything not m1) = 0 when we look at anything that isn't mod m1.
+So the terms drop out and all we have left is the solution.
+"""
+
 def crt(mods, congruencies):
     big_m = 1
     for i in mods:
