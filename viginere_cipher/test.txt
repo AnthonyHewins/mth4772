@@ -1,0 +1,59 @@
+All Passages on the New SAT are Long
+
+With the old SAT, there were tiny passages, some of which were easy to understand. At the other end of the spectrum was the nightmare-inducing long passage: 100 lines of dense material chock full of SAT vocabulary.
+
+Those days are gone and now the SAT has passages range from about 60 lines to about a 100 lines. They are all pretty dense, but not nearly as much as some of the SAT reading passages from the previous test were. Difficulty-wise, however, you get quite a range. Straightforward passages taken from a magazine article (“the economics of the perfect gift”) to 19th century British fiction or an 18th century parliamentary speech, cast in language that, to our modern ear at least, sounds archaic and stilted.
+
+From the material the College Board has offered so far, it doesn’t seem like there is any pattern. A section may start off with a long difficult passage, or it might start off with a shorter (though no shorter than about 60 lines) straightforward passage. What you shouldn’t expect though is a section full of Jane Austin, John Locke, and scientific studies. Typically, two out of the four passages will be this difficult. The other two not so much.
+ 
+A possible strategy for long passages on the New SAT
+
+A good strategy, if you are short on time, is to skip to a passage that doesn’t seem as tough. Since every passage contains either 10 or 11 questions, by skipping to an easier passage, you will still be able to answer about the same number of questions. (It’s not as though you are skipping to a passage that only has a few questions, giving you less of chance to answer more question correctly).
+
+To complicate things slightly, each reading section will always have a dual passage: two medium passages (40-50 lines) on the same topic, typically with divergent views. Yes, such passage will be long; but it won’t necessarily be difficult. So you might end up skipping to this passage first.
+
+Whether or not you want to leave the long, difficult passage to the very end depends on your score. If you are a high-scorer—or at least looking to a get high score on the reading—I wouldn’t worry too much about this strategy. But for those who might not even finish the entire section, it makes sense to leave the long-difficult passage to the very end. The reasoning is that if you are going to struggle to understand the passage, likely missing several questions, why burn your mental resources, when you can save them for a passage in which you have a much better chance of understanding. Conversely, leaving the easier SAT reading passages to the end—when you are pressed for time—will likely lead you to miss questions that you would have otherwise gotten right had you not been rushing.
+
+elow is a difficult science passage. As you read through the passage, you should keep in the mind the five points below the passage (or, you can read more about these five points in detail).
+
+In the mid-1970’s, Walter Alvarez, a geologist, was studying Earth’s polarity. It had recently been learned that the orientation of the planet’s magnetic field reverses, so that every so often, in effect, south becomes north and vice versa. Alvarez and some colleagues had found that a certain formation of pinkish limestone in Italy, known as the scaglia rossa, recorded these occasional reversals. The limestone also contained the fossilized remains of millions of tiny sea creatures called foraminifera. Alvarez became interested in a thin layer of clay in the limestone that seemed to have been laid down around the end of the Cretaceous Period. Below the layer, certain species of foraminifera—or forams, for short—were preserved. In the clay layer, there were no forams. Above the layer, the earlier species disappeared and new forams appeared. Having been taught the uniformitarian view, which held that any apparent extinctions throughout geological time resulted from ‘the incompleteness of the fossil record’ rather than an actual extinction, Alvarez was not sure what to make of the lacuna in geological time corresponding to the missing foraminifera, because the change looked very abrupt.
+
+Had Walter Alvarez not asked his father, the Nobel Prize-winning physicist Luis Alvarez, how long the clay had taken to deposit, the younger Alvarez may not have thought to use iridium, an element rarely found on earth but more plentiful in meteorites, to answer this question. Iridium, in the form of microscopic grains of cosmic dust, is constantly raining down on the planet. The Alvarezes reasoned that if the clay layer had taken a significant amount of time to deposit, it would contain detectable levels of iridium.  The results were startling – far too much iridium had shown up. The Alvarez hypothesis, as it became known, was that everything – not just the clay layer, could be explained by a single event: a six-mile-wide asteroid had slammed into Earth—killing off not only the forams but the dinosaurs, and all the other organisms that went extinct at the end of the Cretaceous period.
+
+ 
+
+1.     Remember the Big Picture
+
+After reading about Alvarez and the limestone, you should be able to say that the passage was about more than just Alvarez looking at limestone. The point is to talk about how a theory was challenged. Which theory? The theory of incompleteness – the Alvarezes believe that the evidence wasn’t lacking for animals during the Cretaceous period. The animals went extinct because of a meteorite.
+
+Were you to paraphrase the passage (remember, as though you were talking to an intelligent 12-year old) your paraphrase should not be, “uh, it’s about this guy and he like finds this rock, and uh…” (you are not paraphrasing to Beavis and Butthead). Instead this would probably suffice:
+
+This scientist found a layer of rock in which it was indicated that much life on Earth had suddenly vanished. He’d learned that any hole in the fossil record meant scientists simply had yet to find evidence. He went to his dad, who happened to be a famous scientist, and they tested the rock for this stuff called iridium. It falls to earth from space in little amounts so they could use it to figure out how much time went by to account for this hole in the fossil record. But they found way too much iridium in the rock, so they came up with this theory that a big meteorite (meteors have lots of iridium) crashed into earth and killed everything. That’s why there was a big hole in the fossil record.
+
+ 
+
+ 2.     Understanding Structure
+
+No, of course you do not have to sit there and paraphrase the entire part, but you have to get the gist, so you can see how all the parts of the two paragraphs fit together. But a good paraphrase will help you see the way the passage is structured. Sometimes, you can make a notation on paper of everything that is going on:
+
+finds rock – big, sudden hole fossil record – use iridium to test – too much iridium – therefore big meteorite caused hole in fossil record (dinosaur extinction)
+
+ 
+
+3.     Embrace the Weird, Italicized Words
+
+In this passage, we have forams and the more formidable foraminifera (wow, that was quite the alliteration). Even the limestone has a name, scaglia rossa, however, that name isn’t too important. The forams, on the other hand, were the fossil remains that suddenly disappeared. It was this disappearance that Alvarez Junior was trying to figure out. Had he not noticed their sudden disappearance in the limestone, then the meteor hypothesis would not have been forthcoming.
+
+ 
+
+4.     Don’t Sink into the Swamp
+
+There are some swampy parts, but, in general, this passage is more uniformly dense. One difficult part is the last sentence of the first paragraph, “Having…”
+
+Again, go back to this part of the passage only if a question directs you there. You could also just try to glean the gist of the sentence, i.e. this random gap in the fossil record confused Alvarez because it was so abrupt.
+
+ 
+
+5.     Remember the geography of the passage
+
+If you can paraphrase the passage well, if you remembered the technical words and how they functioned in the passage, and you are able to discuss the relationship between the first and second paragraphs, then you should have a good sense of where in the passage important facts are. Having a strong sense of the geography of the passage will allow you to quickly find the relevant part of the passage when you answer questions.

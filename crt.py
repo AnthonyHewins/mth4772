@@ -1,23 +1,35 @@
 from euclidean_algorithm import euclidean_algorithm as gcd
 
 """
-Given a set of congruencies where m_i are relatively prime:
+Given a set of congruencies where m_i are pairwise relatively prime:
 
 x === a1 (mod m1)
-x === a2 (mod m2)
+x === a2 (mod m2)   (define === := "congruent to")
 x === a3 (mod m3)
 x === a4 (mod m4)
+                                       ___  
+x has a unique solution mod M, where M=| |m.
 
-construct a solution such that:
+Proof: First define
+      ___
+      | | m 
+M1 = -------
+       m1   
 
-     (x m1 m2 ...)
-M1 = ------------- for all n;
-         m1
+x = (a1)(M1)(y1) + (a2)(M2)(y2) + ...
+where y_r is the inverse of M_r.
 
-x = (a1)(M1) + (a2)(M2) + ...
+Notice x % (anything not m1) = 0 when we look at anything that isn't mod m1,
+since they all contain a factor of all the other m's, and so drop to 0.
+This they are all relatively prime.
 
-Notice x % (anything not m1) = 0 when we look at anything that isn't mod m1.
-So the terms drop out and all we have left is the solution.
+This means (if we look at n=1) we are left with
+
+(a1)(M1)(y1) === a1 (mod m1)
+
+After some trial and error, we find y1, and that means M1 * y1 === 1 (mod m1). So
+
+a1 * 1 === a1 (mod m1).
 """
 
 def crt(mods, congruencies):
