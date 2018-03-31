@@ -3,7 +3,7 @@
 from string import ascii_lowercase as alphabet
 from statistics import mode
 from config import KEY
-
+from numpy import array
 
 # Actual value is 0.065 but we approximate
 INDEX_OF_COINCIDENCE_THRESHOLD = 0.06
@@ -126,11 +126,9 @@ def viginere_hack(ctext):
             if compute_ic(chars_at_index_i) < INDEX_OF_COINCIDENCE_THRESHOLD:
                 got_key = False
                 break
-            print("IC passed for char", i)
             got_key = True
 
         if got_key:
-            print("Looks like keylength is", i)
             break
         elif i == len(ctext):
             print("=====================================================")
@@ -150,51 +148,68 @@ def viginere_hack(ctext):
     n = len(blocks)
     
     # Most common letters in english are in the vector below
-    most_likely = list('etaoinsrhldcumfpgwybvkxjqz')
+    most_likely = [what_index_is[i] for i in list('etaoinsrhldcumfpgwybvkxjqz')]
 
     def determine_shift(cipherchar, guess):
         # We guess that "guess" ends at cipherchar after encryption.
         # Determine how much "guess" has to shift.
         # cipherchar = guess + shift =>
         # shift = cipherchar - guess.
-        return what_index_is[cipherchar] - what_index_is[guess]
+        return cipherchar - guess
 
     key_matrix = [[]] * C
     for i in range(keylength):
         # Assume that one of the top 5 letters is 'e',
         # which asymptotically is true. Then use those
-        # top 5 letters to see if any of them make a
-        # word.
-
+        # top 5 letters stored in f to see if any of
+        # them make a word.
         ith_chars = [block[i:i+1] for block in blocks]
         f = [0] * alphabet_length
-        for i in ith_chars:
-            f[what_index_is[i]] += 1
+        for j in ith_chars:
+            f[what_index_is[j]] += 1
 
-        top_5_chars = f[0:C]
+        # Find the top C maxes like the following:
+        # Have a 2D array that stores the frequency and index
+        #
+        #
+        #
+        #
+        #
+        top_5_frequencies = array([[0] * 2] * C)
+        for j in f:
+            pointer = 0
+            if j > top_5_chars[pointer]:
+                top_5_chars[pointer] = j
+                pointer += 1
+                while j > top_5_chars[pointer]:
+                    top_5_chars[pointer-1] = top_5_chars[pointer]
+                    top_5_chars[pointer] = j
+                    pointer += 1
+                    if pointer == C: break
+
+        print(top_5_chars)
         for j in range(C):
             guess_shift = determine_shift(
-                top_5_chars[i],
-                most_likely[i]
+                top_5_chars[j],
+                most_likely[j]
             )
-            key_matrix[j][i] += alphabet[guess_shift]
+            key_matrix[i][j] += alphabet[guess_shift]
 
     #==========================================================================================
     # Step 3: We got a key matrix; now let's break the key.
     #==========================================================================================
 
+    print(key_matrix)
+    
     # Create our set() of english words
     english = set(open("english.txt").splitlines())
 
-    # Something in here has to be in the hash table if everything worked correctly.
+    # Something in here has to be in the hash table if everything worked correctly,
+    # and we are looking at something in English
     key = ''
-    not_found_key = True
+    key_not_found = True
     
-    while not_found_key:
-         
-                
-
-
+        
 
     return key
         
