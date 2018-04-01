@@ -1,4 +1,17 @@
-from euclidean_algorithm import extended_euclidean_algorithm as invert
+"""Knapsack cipher
+
+1. Generate something in Z[x_i] that's decently complicated,
+   and is superincreasing
+2. Multiply the entire polynomial by private key r satisfying
+   gcd(r, q) = 1, where q is your prime
+3. Take the bits of your plaintext and multiply the ith term
+   (of the polynomial multiplied by r) by the ith bit of the
+   plaintext. Sum the result and send it.
+4. Multiply by the inverse and then use the greedy algo to
+   get the original plaintext back
+"""
+
+from gmpy import invert
 from math import gcd
 
 #=======================================================================
@@ -32,7 +45,7 @@ if gcd(r, q) != 1:
     exit()
 
 #=========================================================
-# Logic begins here
+# Code
 #=========================================================
 
 def knapsack_encrypt(plainbits):
@@ -47,7 +60,7 @@ def knapsack_decrypt(ctext):
     1. Invert r and obtain the original sum
     2. Use greedy algo to determine the original bits
     """
-    plaintext_sum = (invert(r, q)[1] * ctext) % q
+    plaintext_sum = (int(invert(r, q)) * ctext) % q
     
     n = len(privkey)
     bitmap = [0] * n

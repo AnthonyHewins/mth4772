@@ -1,5 +1,4 @@
 import random
-from euclidean_algorithm import extended_euclidean_algorithm as invert
 from string import ascii_lowercase as alphabet
 from exponentiation_cipher import exp_encrypt, exp_decrypt
 from knapsack import knapsack_encrypt, knapsack_decrypt
@@ -9,7 +8,9 @@ from eg import eg_encrypt, eg_decrypt
 
 message = ""
 
-# This runs for every problem to ensure the code worked.
+#==============================================================================
+# Helper function (makes running the tests easier)
+#==============================================================================
 def test(encrypt, decrypt, plaintext):
     print("=====================================================")
     print(message)
@@ -22,8 +23,6 @@ def test(encrypt, decrypt, plaintext):
 
     if plaintext == decrypted_ciphertext:
         print("Correct")
-    else:
-        print("Failed")
 
 #=========================================================
 # Problem 1: Exponentiation cipher.
@@ -38,9 +37,8 @@ test(exp_encrypt, exp_decrypt, plaintext)
 
 
 #=========================================================
-# Problem 2
+# Problem 2: Knapsack
 #=========================================================
-# Knapsack cipher, using the given superincreasing sequence.
 message = "Problem 2: Knapsack cipher"
 plaintext = [0,0,1,0,1,1,1,0]
 test(knapsack_encrypt, knapsack_decrypt, plaintext)
@@ -55,10 +53,10 @@ test(rsa_encrypt, rsa_decrypt, plaintext)
 
 
 #=========================================================
-# Problem 4 (the code is so minimal I just do it right here)
+# Problem 4: DH (the code is so minimal I just do
+# encrypt/decrypt here, but finding the generator is in
+# another file.)
 #=========================================================
-# Find all the generators of \mathbb{Z^*}_17.
-# Then pick one for Diffie-Hellman.
 generators = find_generators(17)
 print("=====================================================")
 print("Problem 4: Diffie-Hellman")
