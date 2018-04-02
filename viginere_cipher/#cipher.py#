@@ -150,13 +150,6 @@ def viginere_hack(ctext):
     # Most common letters in english are in the vector below, descending
     most_likely = [what_index_is[i] for i in list('etaoinsrhldcumfpgwybvkxjqz')]
 
-    def determine_shift(cipherchar, guess):
-        # We guess that "guess" ends at cipherchar after encryption.
-        # Determine how much "guess" has to shift.
-        # cipherchar = guess + shift =>
-        # shift = cipherchar - guess.
-        return (cipherchar - guess) % alphabet_length
-
     key_matrix = [0] * C
     print(key_matrix)
     for i in range(keylength):
@@ -170,16 +163,7 @@ def viginere_hack(ctext):
         for j in range(alphabet_length):
             if j != '':
                 f[what_index_is[j]] += 1
-
-        bijection = dict()
-        for i in range(alphabet_length):
-            bijection[f[i]] = i
-        list.sort(f)
-
-        # Determine all the shifts for each likely char. Then we will do some
-        # analysis to see if that shift makes sense.
-        for j in range(C):
-            guess_shift = determine_shift(top_chars[j], most_likely[j])
+        
 
     #==========================================================================================
     # Step 3: We got a key matrix; now let's break the key.
