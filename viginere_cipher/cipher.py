@@ -11,12 +11,6 @@ INDEX_OF_COINCIDENCE_THRESHOLD = 0.06
 # Because it comes in handy in several spots
 alphabet_length = len(alphabet)
 
-# When we start doing hacking and guess "the most common ciphertext
-# char should be 'e'" for the ith character, we also check the
-# 2nd, 3rd, 4th, ... C - 1, C chars. C stands for confidence
-# we have in how well the passage represents expected English.
-C = 5
-
 # We will need to know the index of a letter in the alphabet frequently.
 # Cut the computation time down with a hash table.
 what_index_is = dict()
@@ -97,8 +91,8 @@ def viginere_hack(ctext):
 
         # for each letter the index is
         #             f_i(f_i - 1)
-        # C(f_i, 2) = ------------ (we can cancel the 2 though;
-        #                  2        the denominator has one.)
+        # C(f_i, 2) = ------------ (we can cancel the 2 though)
+        #                  2
         numerator = sum([(freq * (freq - 1)) for freq in f])
         n = len(string)
         try:
@@ -147,46 +141,26 @@ def viginere_hack(ctext):
     blocks = blocks # This is the proper partition of the text
     n = len(blocks)
     
-    # Most common letters in english are in the vector below, descending
-    most_likely = [what_index_is[i] for i in list('etaoinsrhldcumfpgwybvkxjqz')]
-
-    def determine_shift(cipherchar, guess):
-        # We guess that "guess" ends at cipherchar after encryption.
-        # Determine how much "guess" has to shift.
-        # cipherchar = guess + shift =>
-        # shift = cipherchar - guess.
-        return (cipherchar - guess) % alphabet_length
-
-    key_matrix = [0] * C
-    print(key_matrix)
     for i in range(keylength):
-        # Assume that one of the top 5 letters is 'e' at any index,
-        # which asymptotically is true. Then use those
-        # top 5 letters stored in f to see if any of
-        # them make a word.
         ith_chars = [block[i:i+1] for block in blocks]
 
         f = [0] * alphabet_length
-        for j in range(alphabet_length):
+        for j in ith_chars:
             if j != '':
                 f[what_index_is[j]] += 1
 
         bijection = dict()
         for i in range(alphabet_length):
             bijection[f[i]] = i
-        list.sort(f)
 
-        # Determine all the shifts for each likely char. Then we will do some
-        # analysis to see if that shift makes sense.
-        for j in range(C):
-            guess_shift = determine_shift(top_chars[j], most_likely[j])
+        
+
+
 
     #==========================================================================================
     # Step 3: We got a key matrix; now let's break the key.
     #==========================================================================================
 
-    print(key_matrix)
-    
     # Create our set() of english words
     english = set(open("english.txt").read().splitlines())
 
@@ -194,6 +168,12 @@ def viginere_hack(ctext):
     # and we are looking at something in English
     key = ''
     key_not_found = True
+    for i in range(keylength):
+        # Assume that the most common letter here comes from an 'e',
+        # which asymptotically is true
+        most_common_letter = mode([block[i:i+1] for block in blocks])
+        guess_shift = determine_shift(most_common_letter, most_likely[0])
+        key += alphabet[guess_shift]
 
     return key, key_matrix
         
